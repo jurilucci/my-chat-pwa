@@ -1,0 +1,137 @@
+// @ts-check
+const eslint = require('@eslint/js');
+const { defineConfig } = require('eslint/config');
+const tseslint = require('typescript-eslint');
+const angular = require('angular-eslint');
+const perfectionist = require('eslint-plugin-perfectionist');
+
+module.exports = defineConfig([
+  {
+    files: ['**/*.ts'],
+    extends: [
+      eslint.configs.recommended,
+      tseslint.configs.recommended,
+      tseslint.configs.stylistic,
+      angular.configs.tsRecommended,
+    ],
+    processor: angular.processInlineTemplates,
+    rules: {
+      '@angular-eslint/directive-selector': [
+        'error',
+        { type: 'attribute', prefix: 'jet', style: 'camelCase' },
+      ],
+      '@angular-eslint/component-selector': [
+        'error',
+        { type: 'element', prefix: 'jet', style: 'kebab-case' },
+      ],
+      '@angular-eslint/prefer-inject': 'error',
+      '@angular-eslint/prefer-on-push-component-change-detection': 'error',
+      '@angular-eslint/prefer-signal-model': 'error',
+      '@angular-eslint/prefer-signals': 'error',
+      '@typescript-eslint/explicit-member-accessibility': 'error',
+      '@typescript-eslint/member-ordering': [
+        'error',
+        {
+          classes: [
+            '#private-instance-field',
+            'public-instance-field',
+            'protected-instance-field',
+            'constructor',
+            'public-instance-method',
+            'protected-instance-method',
+            '#private-instance-method',
+          ],
+        },
+      ],
+      '@typescript-eslint/prefer-readonly': 'error',
+      '@typescript-eslint/naming-convention': [
+        'error',
+        { selector: 'default', format: ['camelCase'], leadingUnderscore: 'forbid' },
+        { selector: 'enumMember', format: ['PascalCase'], leadingUnderscore: 'forbid' },
+        {
+          selector: 'method',
+          modifiers: ['private'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'parameter',
+          modifiers: ['unused'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'parameterProperty',
+          modifiers: ['private'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'property',
+          modifiers: ['private'],
+          format: ['camelCase', 'snake_case', 'UPPER_CASE'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'property',
+          format: ['camelCase', 'snake_case', 'UPPER_CASE'],
+          leadingUnderscore: 'forbid',
+        },
+        { selector: 'typeLike', format: ['PascalCase'], leadingUnderscore: 'forbid' },
+        {
+          selector: 'variable',
+          modifiers: ['const'],
+          types: ['function'],
+          format: ['camelCase'],
+          leadingUnderscore: 'forbid',
+        },
+        {
+          selector: 'variable',
+          modifiers: ['const'],
+          format: ['camelCase', 'UPPER_CASE'],
+          leadingUnderscore: 'forbid',
+        },
+      ],
+      '@typescript-eslint/no-floating-promises': 'error',
+      '@typescript-eslint/no-inferrable-types': 'off',
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector:
+            "PropertyDefinition[accessibility='private'], MethodDefinition[accessibility='private'], TSParameterProperty[accessibility='private']",
+          message: 'Use ECMAScript private (#) instead of TypeScript private.',
+        },
+      ],
+      'perfectionist/sort-enums': 'warn',
+      'perfectionist/sort-interfaces': 'warn',
+      'perfectionist/sort-intersection-types': 'warn',
+      'perfectionist/sort-objects': 'warn',
+      'perfectionist/sort-object-types': 'warn',
+      'perfectionist/sort-switch-case': 'warn',
+      'perfectionist/sort-union-types': 'warn',
+      'no-alert': 'error',
+      'no-console': 'error',
+      'sort-keys': ['warn', 'asc', { caseSensitive: false }],
+    },
+    languageOptions: {
+      parserOptions: { projectService: { allowDefaultProject: ['transloco.config.ts'] } },
+    },
+    plugins: { perfectionist },
+  },
+  {
+    files: ['**/*.html'],
+    extends: [angular.configs.templateAll],
+    rules: {
+      '@angular-eslint/template/attributes-order': ['warn', { alphabetical: true }],
+      '@angular-eslint/template/cyclomatic-complexity': 'off',
+      '@angular-eslint/template/i18n': 'off',
+      '@angular-eslint/template/no-call-expression': 'off',
+      '@angular-eslint/template/no-inline-styles': 'off',
+      'no-restricted-syntax': [
+        'error',
+        { selector: 'BoundAttribute[name="ngClass"]' },
+        { selector: 'BoundAttribute[name="ngStyle"]' },
+      ],
+    },
+  },
+]);

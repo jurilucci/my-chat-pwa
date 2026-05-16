@@ -1,0 +1,43 @@
+@let _isLargeViewport = isLargeViewport();
+@let _progressBarConfiguration = progressBarConfiguration();
+@let _shouldAddSafeArea = shouldAddSafeArea();
+@let _toolbarTitle = toolbarTitle();
+
+<ng-container *transloco="let t; prefix: 'jet-toolbar'">
+  <mat-toolbar
+    [class]="{ 'jet-add-safe-area': _shouldAddSafeArea, 'jet-sidenav-content-toolbar': true }"
+  >
+    <mat-progress-bar
+      [aria-label]="t('loading')"
+      [bufferValue]="_progressBarConfiguration.bufferValue"
+      [mode]="_progressBarConfiguration.mode"
+      [style]="{ opacity: _progressBarConfiguration.isVisible ? 1 : 0 }"
+      [value]="_progressBarConfiguration.value"
+    />
+    @if (_isLargeViewport) {
+      <button
+        matIconButton
+        matTooltipPosition="after"
+        type="button"
+        [aria-label]="t('toggle-navigation-menu')"
+        [jetAnalyticsEvent]="{ name: 'toggle_sidenav' }"
+        [matTooltip]="t('toggle-navigation-menu')"
+        (click)="toggleMatSidenav.emit()"
+      >
+        <mat-icon>short_text</mat-icon>
+      </button>
+    } @else {
+      <a
+        matIconButton
+        matTooltipPosition="after"
+        [aria-label]="t('home')"
+        [jetAnalyticsEvent]="{ name: 'open_home' }"
+        [matTooltip]="t('home')"
+        [routerLink]="['/']"
+      >
+        <mat-icon svgIcon="logo" />
+      </a>
+    }
+    <span style="font: var(--mat-sys-headline-small)">{{ _toolbarTitle || t('loading') }}</span>
+  </mat-toolbar>
+</ng-container>

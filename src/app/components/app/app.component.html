@@ -1,0 +1,65 @@
+@let _directionality = directionality();
+@let _isLargeViewport = isLargeViewport();
+@let _matSidenavMode = matSidenavMode();
+@let _shouldAddSafeArea = shouldAddSafeArea();
+
+<ng-container *transloco="let t; prefix: 'jet-app'">
+  <mat-sidenav-container
+    class="jet-sidenav-container"
+    [dir]="_directionality"
+  >
+    <mat-sidenav
+      #matSidenav
+      class="jet-sidenav"
+      fixedInViewport
+      [mode]="_matSidenavMode"
+      [(opened)]="isMatSidenavOpen"
+    >
+      @defer (on idle) {
+        <jet-sidenav
+          [activeNavigationMenuItemPath]="activeNavigationMenuItemPath"
+          (clickNavigationMenuItem)="_matSidenavMode === 'over' && matSidenav.close()"
+        />
+      }
+    </mat-sidenav>
+    <mat-sidenav-content class="jet-sidenav-content">
+      <jet-toolbar
+        [isLargeViewport]="_isLargeViewport"
+        [shouldAddSafeArea]="_shouldAddSafeArea"
+        (toggleMatSidenav)="matSidenav.toggle()"
+      />
+      <mat-tab-nav-panel #tabPanel>
+        <main [class]="{ 'jet-add-safe-area': _shouldAddSafeArea }">
+          <router-outlet />
+        </main>
+      </mat-tab-nav-panel>
+      <footer
+        [class]="{
+          'jet-add-bottom-margin': !_isLargeViewport,
+          'jet-add-safe-area': _shouldAddSafeArea,
+        }"
+      >
+        <jet-footer />
+      </footer>
+      @if (!_isLargeViewport) {
+        <nav
+          backgroundColor="primary"
+          class="jet-tab-nav-bar"
+          mat-tab-nav-bar
+          [tabPanel]="tabPanel"
+        >
+          @for (navigationMenuItem of navigationMenuItems; track navigationMenuItem.path) {
+            <a
+              mat-tab-link
+              [active]="activeNavigationMenuItemPath === navigationMenuItem.path"
+              [aria-label]="navigationMenuItem.nameKey | transloco"
+              [routerLink]="[navigationMenuItem.path]"
+            >
+              <mat-icon>{{ navigationMenuItem.icon }}</mat-icon>
+            </a>
+          }
+        </nav>
+      }
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</ng-container>

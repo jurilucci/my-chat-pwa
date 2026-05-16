@@ -1,0 +1,50 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve",
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "baseUrl": "./",
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "paths": {
+      "@jet/classes/*": ["src/app/classes/*"],
+      "@jet/components/*": ["src/app/components/*"],
+      "@jet/constants/*": ["src/app/constants/*"],
+      "@jet/directives/*": ["src/app/directives/*"],
+      "@jet/enums/*": ["src/app/enums/*"],
+      "@jet/guards/*": ["src/app/guards/*"],
+      "@jet/injection-tokens/*": ["src/app/injection-tokens/*"],
+      "@jet/interceptors/*": ["src/app/interceptors/*"],
+      "@jet/interfaces/*": ["src/app/interfaces/*"],
+      "@jet/pipes/*": ["src/app/pipes/*"],
+      "@jet/services/*": ["src/app/services/*"],
+      "@jet/types/*": ["src/app/types/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    "extendedDiagnostics": {
+      "defaultCategory": "error" // https://angular.dev/extended-diagnostics#configuration
+    }
+  },
+  "files": [],
+  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.spec.json" }]
+}

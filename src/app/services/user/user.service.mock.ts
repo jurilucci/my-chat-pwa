@@ -1,0 +1,66 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+import { Signal, signal, WritableSignal } from '@angular/core';
+import { OauthProvider } from '@jet/types/oauth-provider.type';
+import {
+  AuthError,
+  AuthOtpResponse,
+  AuthResponse,
+  AuthTokenResponsePassword,
+  JwtHeader,
+  JwtPayload,
+  OAuthResponse,
+  User,
+  UserAttributes,
+  UserResponse,
+} from '@supabase/supabase-js';
+
+export class UserServiceMock {
+  readonly #user: WritableSignal<null | User>;
+
+  public constructor() {
+    this.#user = signal(null);
+  }
+
+  public get user(): Signal<null | User> {
+    return this.#user.asReadonly();
+  }
+
+  public getClaims(): Promise<
+    | { data: { claims: JwtPayload; header: JwtHeader; signature: Uint8Array }; error: null }
+    | { data: null; error: AuthError }
+    | { data: null; error: null }
+  > {
+    return Promise.resolve({ data: null, error: null });
+  }
+
+  public resetPasswordForEmail(
+    _email: string,
+  ): Promise<{ data: null; error: AuthError } | { data: object; error: null }> {
+    return Promise.resolve({ data: {}, error: null });
+  }
+
+  public signInWithOauth(_oauthProvider: OauthProvider): Promise<OAuthResponse> {
+    return Promise.resolve({} as OAuthResponse);
+  }
+
+  public signInWithOtp(_email: string): Promise<AuthOtpResponse> {
+    return Promise.resolve({} as AuthOtpResponse);
+  }
+
+  public signInWithPassword(_email: string, _password: string): Promise<AuthTokenResponsePassword> {
+    return Promise.resolve({} as AuthTokenResponsePassword);
+  }
+
+  public signOut(): Promise<{ error: AuthError | null }> {
+    return Promise.resolve({ error: null });
+  }
+
+  public signUp(_email: string, _password: string): Promise<AuthResponse> {
+    return Promise.resolve({} as AuthResponse);
+  }
+
+  public updateUser(_userAttributes: UserAttributes): Promise<UserResponse> {
+    return Promise.resolve({} as UserResponse);
+  }
+}
