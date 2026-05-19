@@ -72,6 +72,10 @@ html {
   );
 }
 
+html:not(.jet-fonts-ready) mat-icon.material-symbols-rounded {
+  visibility: hidden;
+}
+
 body {
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);

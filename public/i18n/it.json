@@ -31,6 +31,7 @@
     "settings": "Impostazioni"
   },
   "jet-chat-page": {
+    "general-room": "Stanza Generale",
     "disable-push": "Disattiva notifiche",
     "enable-push": "Attiva notifiche",
     "message": "Messaggio",
@@ -54,12 +55,17 @@
     "unknown-user": "Utente"
   },
   "jet-home-page": {
+    "app-name": "My Chat",
+    "description": "Messaggi in tempo reale e notifiche push quando non sei nell'app. Una stanza condivisa per tutta la community.",
+    "open-chat": "Apri la chat",
     "seo": {
-      "description": "Starter kit Angular per creare web app di qualità in fretta.",
-      "keywords": "jet",
-      "title": "Jet - Starter kit Angular per web app di qualità"
+      "description": "Chat PWA con messaggi in tempo reale e notifiche push.",
+      "keywords": "chat pwa push realtime",
+      "title": "My Chat"
     },
-    "toolbar-title": "Jet"
+    "sign-in": "Accedi",
+    "tagline": "La tua chat, sempre con te",
+    "toolbar-title": "Home"
   },
   "jet-message-page": {
     "message": "Messaggio",

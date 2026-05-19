@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+
+.home-hero {
+  justify-content: center;
+  min-height: min(70dvh, 560px);
+  padding: 32px 24px 48px;
+  text-align: center;
+}
+
+.home-logo {
+  height: 88px;
+  width: 88px;
+}
+
+.home-title {
+  font: var(--mat-sys-display-small);
+  margin: 0;
+}
+
+.home-tagline {
+  color: var(--mat-sys-primary);
+  font: var(--mat-sys-title-large);
+  margin: 0;
+  max-width: 28rem;
+}
+
+.home-description {
+  color: var(--mat-sys-on-surface-variant);
+  font: var(--mat-sys-body-large);
+  margin: 0;
+  max-width: 32rem;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 8px;
+}

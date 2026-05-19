@@ -1,11 +1,14 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 import { LoggerService } from '@jet/services/logger/logger.service';
 import { TranslocoModule } from '@jsverse/transloco';
 import { PageComponent } from '../page/page.component';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TranslocoModule, PageComponent],
+  imports: [MatButtonModule, MatIconModule, RouterLink, TranslocoModule, PageComponent],
   selector: 'jet-home-page',
   styleUrl: './home-page.component.scss',
   templateUrl: './home-page.component.html',

@@ -185,6 +185,16 @@ export class AppComponent implements OnDestroy, OnInit {
   }
 
   public ngOnInit(): void {
+    const fonts = this.#document.fonts;
+
+    if (fonts) {
+      void fonts.ready.then(() => {
+        this.#renderer2.addClass(this.#document.documentElement, 'jet-fonts-ready');
+      });
+    } else {
+      this.#renderer2.addClass(this.#document.documentElement, 'jet-fonts-ready');
+    }
+
     this.#analyticsService.logAnalyticsEvent({
       data: { version: packageJson.version },
       name: 'start',

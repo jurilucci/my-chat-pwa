@@ -31,6 +31,7 @@
     "settings": "Settings"
   },
   "jet-chat-page": {
+    "general-room": "General room",
     "disable-push": "Disable notifications",
     "enable-push": "Enable notifications",
     "message": "Message",
@@ -54,12 +55,17 @@
     "unknown-user": "User"
   },
   "jet-home-page": {
+    "app-name": "My Chat",
+    "description": "Real-time messages and push notifications when you're away. One shared room for the whole community.",
+    "open-chat": "Open chat",
     "seo": {
-      "description": "Angular starter kit for building quality web apps fast.",
-      "keywords": "jet",
-      "title": "Jet - Angular starter kit for building quality web apps fast."
+      "description": "PWA chat with real-time messaging and push notifications.",
+      "keywords": "chat pwa push realtime",
+      "title": "My Chat"
     },
-    "toolbar-title": "Jet"
+    "sign-in": "Sign in",
+    "tagline": "Your chat, always with you",
+    "toolbar-title": "Home"
   },
   "jet-message-page": {
     "message": "Message",

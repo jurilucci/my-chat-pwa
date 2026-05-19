@@ -5,6 +5,30 @@
     [seoTitle]="t('seo.title')"
     [toolbarTitle]="t('toolbar-title')"
   >
-    <p>home-page works!</p>
+    <section class="home-hero jet-flexc-centered">
+      <mat-icon
+        aria-hidden="true"
+        class="home-logo"
+        svgIcon="logo"
+      />
+      <h1 class="home-title">{{ t('app-name') }}</h1>
+      <p class="home-tagline">{{ t('tagline') }}</p>
+      <p class="home-description">{{ t('description') }}</p>
+      <div class="home-actions">
+        <a
+          color="primary"
+          mat-flat-button
+          [routerLink]="['/chat']"
+        >
+          {{ t('open-chat') }}
+        </a>
+        <a
+          mat-button
+          [routerLink]="['/sign-in']"
+        >
+          {{ t('sign-in') }}
+        </a>
+      </div>
+    </section>
   </jet-page>
 </ng-container>
