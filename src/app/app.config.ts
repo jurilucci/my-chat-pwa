@@ -22,6 +22,7 @@ import { DEFAULT_LANGUAGE_OPTION } from '@jet/constants/default-language-option.
 import { LANGUAGE_OPTIONS } from '@jet/constants/language-options.constant';
 import { progressBarInterceptor } from '@jet/interceptors/progress-bar/progress-bar.interceptor';
 import { LanguageOption } from '@jet/interfaces/language-option.interface';
+import { PushService } from '@jet/services/push/push.service';
 import { ServiceWorkerService } from '@jet/services/service-worker/service-worker.service';
 import { Language } from '@jet/types/language.type';
 import { provideTransloco } from '@jsverse/transloco';
@@ -35,6 +36,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideEnvironmentInitializer(() => {
       inject(ServiceWorkerService);
+      inject(PushService);
     }),
     { provide: MatPaginatorIntl, useClass: JetMatPaginatorIntl },
     {
@@ -52,7 +54,7 @@ export const appConfig: ApplicationConfig = {
       withInMemoryScrolling({ anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled' }),
     ),
     provideServiceWorker('ngsw-worker.js', {
-      enabled: !isDevMode(),
+      enabled: !isDevMode() || import.meta.env.NG_APP_IS_SERVICE_WORKER_ENABLED === 'true',
       registrationStrategy: 'registerWhenStable:30000',
     }),
     provideTransloco({

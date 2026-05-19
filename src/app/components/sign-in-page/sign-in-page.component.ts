@@ -131,9 +131,19 @@ export class SignInPageComponent implements OnInit {
     this.#progressBarService.showIndeterminateProgressBar();
 
     try {
-      const { data } = await this.#userService.signInWithOauth(oauthProvider);
+      const { data, error } = await this.#userService.signInWithOauth(oauthProvider);
 
-      window.location.href = data.url ?? '/';
+      if (error) {
+        throw error;
+      }
+
+      if (!data.url) {
+        throw new Error(
+          'OAuth redirect URL not returned. Enable Google in Supabase and set SUPABASE_AUTH_EXTERNAL_GOOGLE_* in supabase/.env.',
+        );
+      }
+
+      window.location.href = data.url;
     } catch (exception: unknown) {
       if (exception instanceof Error) {
         this.#loggerService.logError(exception);

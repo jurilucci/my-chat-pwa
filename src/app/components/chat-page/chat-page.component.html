@@ -1,0 +1,106 @@
+@let _messages = messages();
+@let _isRealtimeConnected = isRealtimeConnected();
+@let _pushPermission = pushPermission();
+@let _isPushSubscribed = isPushSubscribed();
+@let _userId = currentUserId();
+
+<ng-container *transloco="let t; prefix: 'jet-chat-page'">
+  <jet-page
+    [seoDescription]="t('seo.description')"
+    [seoKeywords]="t('seo.keywords')"
+    [seoTitle]="t('seo.title')"
+    [toolbarTitle]="t('toolbar-title')"
+  >
+    <mat-card class="status-card">
+      <mat-card-content>
+        <mat-chip-set>
+          <mat-chip [highlighted]="_isRealtimeConnected">
+            <mat-icon matChipAvatar>{{ _isRealtimeConnected ? 'wifi' : 'wifi_off' }}</mat-icon>
+            {{ _isRealtimeConnected ? t('realtime-connected') : t('realtime-disconnected') }}
+          </mat-chip>
+          <mat-chip [highlighted]="_isPushSubscribed">
+            <mat-icon matChipAvatar>{{
+              _isPushSubscribed ? 'notifications_active' : 'notifications_off'
+            }}</mat-icon>
+            {{ _isPushSubscribed ? t('push-subscribed') : t('push-not-subscribed') }}
+          </mat-chip>
+          <mat-chip>
+            <mat-icon matChipAvatar>policy</mat-icon>
+            {{ t('notification-permission-x', { x: _pushPermission }) }}
+          </mat-chip>
+        </mat-chip-set>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="messages-card">
+      <mat-card-content>
+        @if (_messages.length === 0) {
+          <p class="empty">{{ t('no-messages-yet') }}</p>
+        } @else {
+          <ul class="message-list">
+            @for (message of _messages; track message.id) {
+              <li [class.own]="message.user_id === _userId">
+                <span class="author">{{ displayName(message) }}</span>
+                <span class="body">{{ message.body }}</span>
+                <time class="time">{{ message.created_at | date: 'short' }}</time>
+              </li>
+            }
+          </ul>
+        }
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="composer-card">
+      <mat-card-content>
+        <form
+          [formGroup]="messageFormGroup"
+          (ngSubmit)="sendMessage()"
+        >
+          <mat-form-field class="body-field">
+            <mat-label>{{ t('message') }}</mat-label>
+            <textarea
+              formControlName="body"
+              matInput
+              rows="2"
+            ></textarea>
+          </mat-form-field>
+          <div class="actions">
+            <button
+              color="primary"
+              mat-flat-button
+              type="submit"
+              [disabled]="messageFormGroup.invalid || isLoading()"
+            >
+              {{ t('send') }}
+            </button>
+            @if (_isPushSubscribed) {
+              <button
+                mat-stroked-button
+                type="button"
+                [disabled]="isLoading()"
+                (click)="unsubscribePush()"
+              >
+                {{ t('disable-push') }}
+              </button>
+            } @else {
+              <button
+                mat-stroked-button
+                type="button"
+                [disabled]="isLoading()"
+                (click)="enablePushNotifications()"
+              >
+                {{ t('enable-push') }}
+              </button>
+            }
+          </div>
+        </form>
+        @if (_pushPermission === 'denied') {
+          <p class="hint">{{ t('push-denied-hint') }}</p>
+        }
+        @if (!isPushEnabled()) {
+          <p class="hint">{{ t('push-sw-disabled-hint') }}</p>
+        }
+      </mat-card-content>
+    </mat-card>
+  </jet-page>
+</ng-container>

@@ -1,0 +1,191 @@
+{
+  "alerts": {
+    "avatar-updated": "Avatar aggiornato.",
+    "checking-for-updates": "Controllo aggiornamenti...",
+    "downloading-updates": "Download aggiornamenti...",
+    "ok": "OK",
+    "password-updated": "Password aggiornata.",
+    "please-select-a-valid-avatar": "Seleziona un avatar valido.",
+    "please-select-an-avatar-lte-x-mb": "Seleziona un avatar <= {{ x }} MB.",
+    "profile-updated": "Profilo aggiornato.",
+    "reload": "RICARICA",
+    "reload-to-update": "Ricarica per aggiornare.",
+    "signed-out-successfully": "Disconnessione effettuata.",
+    "something-went-wrong": "Qualcosa è andato storto.",
+    "welcome": "Benvenuto!",
+    "youre-on-the-latest-version": "Hai già l'ultima versione."
+  },
+  "confirmations": {
+    "youll-lose-unsaved-changes-continue": "Perderai le modifiche non salvate. Continuare?"
+  },
+  "constants": {
+    "arabic": "العربية",
+    "automatic": "Automatico",
+    "chat": "Chat",
+    "dark": "Scuro",
+    "english": "Inglese",
+    "home": "Home",
+    "italian": "Italiano",
+    "light": "Chiaro",
+    "profile": "Profilo",
+    "settings": "Impostazioni"
+  },
+  "jet-chat-page": {
+    "disable-push": "Disattiva notifiche",
+    "enable-push": "Attiva notifiche",
+    "message": "Messaggio",
+    "no-messages-yet": "Nessun messaggio. Scrivi qualcosa!",
+    "notification-permission-x": "Notifiche: {{ x }}",
+    "push-denied-hint": "Le notifiche sono bloccate. Abilitale nelle impostazioni del browser e riprova.",
+    "push-disabled": "Notifiche push disattivate.",
+    "push-enabled": "Notifiche push attivate.",
+    "push-not-subscribed": "Push off",
+    "push-subscribed": "Push on",
+    "push-sw-disabled-hint": "Service worker disattivato in sviluppo. Usa una build di produzione o imposta NG_APP_IS_SERVICE_WORKER_ENABLED=true.",
+    "realtime-connected": "In diretta",
+    "realtime-disconnected": "Offline",
+    "send": "Invia",
+    "seo": {
+      "description": "Chat con realtime e web push.",
+      "keywords": "chat push",
+      "title": "Chat"
+    },
+    "toolbar-title": "Chat",
+    "unknown-user": "Utente"
+  },
+  "jet-home-page": {
+    "seo": {
+      "description": "Starter kit Angular per creare web app di qualità in fretta.",
+      "keywords": "jet",
+      "title": "Jet - Starter kit Angular per web app di qualità"
+    },
+    "toolbar-title": "Jet"
+  },
+  "jet-message-page": {
+    "message": "Messaggio",
+    "not-found": "Non trovato",
+    "open-home": "Vai alla home",
+    "seo": { "description": "Jet.", "keywords": "jet", "title": "Messaggio" },
+    "sign-in-link-description": "Clicca il link nell'email che ti abbiamo inviato per accedere.",
+    "sign-in-link-sent": "Link di accesso inviato",
+    "that-page-doesnt-exist": "Questa pagina non esiste.",
+    "toolbar-title": "Messaggio",
+    "update-password-link-description": "Se esiste un account per questa email, ti invieremo un link per accedere e aggiornare la password.",
+    "verification-email-sent": "Email di verifica inviata",
+    "verify-link-description": "Clicca il link nell'email che ti abbiamo inviato per verificare l'account.",
+    "well-email-you": "Ti invieremo un'email"
+  },
+  "jet-profile-page": {
+    "avatar": "Avatar",
+    "clear": "Cancella",
+    "email": "Email",
+    "full-name": "Nome completo",
+    "full-name-error-maxlength-x": "Il nome può avere al massimo {{ x }} caratteri",
+    "profile": "Profilo",
+    "profile-created-on-x": "Profilo creato il {{ x }}",
+    "profile-last-updated-on-x": "Profilo aggiornato il {{ x }}",
+    "save": "Salva",
+    "seo": { "description": "Jet.", "keywords": "jet", "title": "Profilo" },
+    "sign-out": "Esci",
+    "toolbar-title": "Profilo",
+    "update-password": "Aggiorna password",
+    "username": "Username",
+    "username-error-maxlength-x": "Lo username può avere al massimo {{ x }} caratteri",
+    "username-error-minlength-x": "Lo username deve avere almeno {{ x }} caratteri",
+    "username-error-pattern": "Lo username può contenere solo a-z, 0-9 e _",
+    "username-error-required": "Username obbligatorio",
+    "x-of-y-characters": "{{ x }} di {{ y }} caratteri"
+  },
+  "jet-reset-password-page": {
+    "clear": "Cancella",
+    "email": "Email",
+    "email-error-email": "Inserisci un'email valida",
+    "email-error-required": "Email obbligatoria",
+    "reset-password": "Reimposta password",
+    "seo": { "description": "Jet.", "keywords": "jet", "title": "Reimposta password" },
+    "sign-in": "Accedi",
+    "sign-up": "Registrati",
+    "toolbar-title": "Reimposta password"
+  },
+  "jet-settings-page": {
+    "change-color-scheme": "Cambia tema",
+    "change-language": "Cambia lingua",
+    "check-for-updates": "Controlla aggiornamenti",
+    "last-checked-on-x": "Ultimo controllo: {{ x }}",
+    "reload": "Ricarica",
+    "reload-description": "Mantieni le impostazioni e ricarica",
+    "reset": "Reset",
+    "reset-description": "Reimposta le impostazioni e ricarica",
+    "seo": { "description": "Jet.", "keywords": "jet", "title": "Impostazioni" },
+    "toolbar-title": "Impostazioni",
+    "v-x": "v{{ x }}"
+  },
+  "jet-sidenav": { "home": "Home" },
+  "jet-sign-in-page": {
+    "clear": "Cancella",
+    "email": "Email",
+    "email-error-email": "Inserisci un'email valida",
+    "email-error-required": "Email obbligatoria",
+    "email-sign-in-link": "Link di accesso via email",
+    "or": "- oppure -",
+    "password": "Password",
+    "password-error-minlength-x": "La password deve avere almeno {{ x }} caratteri",
+    "password-error-required": "Password obbligatoria",
+    "reset-password": "Reimposta password",
+    "seo": { "description": "Jet.", "keywords": "jet", "title": "Accedi" },
+    "sign-in": "Accedi",
+    "sign-in-to-continue-to-x": "Accedi per continuare su {{ x }}",
+    "sign-in-with-google": "Accedi con Google",
+    "sign-up": "Registrati",
+    "toggle-visibility": "Mostra/nascondi",
+    "toolbar-title": "Accedi"
+  },
+  "jet-sign-out-page": {
+    "seo": { "description": "Jet.", "keywords": "jet", "title": "Esci" },
+    "toolbar-title": "Esci"
+  },
+  "jet-sign-up-page": {
+    "clear": "Cancella",
+    "email": "Email",
+    "email-error-email": "Inserisci un'email valida",
+    "email-error-required": "Email obbligatoria",
+    "password": "Password",
+    "password-error-minlength-x": "La password deve avere almeno {{ x }} caratteri",
+    "password-error-required": "Password obbligatoria",
+    "reset-password": "Reimposta password",
+    "seo": { "description": "Jet.", "keywords": "jet", "title": "Registrati" },
+    "sign-in": "Accedi",
+    "sign-up": "Registrati",
+    "toggle-visibility": "Mostra/nascondi",
+    "toolbar-title": "Registrati"
+  },
+  "jet-toolbar": {
+    "home": "Home",
+    "loading": "Caricamento...",
+    "toggle-navigation-menu": "Apri/chiudi menu"
+  },
+  "jet-update-password-page": {
+    "email": "Email",
+    "new-password": "Nuova password",
+    "new-password-confirmation": "Conferma nuova password",
+    "new-password-confirmation-error-minlength-x": "La conferma deve avere almeno {{ x }} caratteri",
+    "new-password-confirmation-error-mismatch": "Le password non coincidono",
+    "new-password-confirmation-error-required": "Conferma password obbligatoria",
+    "new-password-error-minlength-x": "La password deve avere almeno {{ x }} caratteri",
+    "new-password-error-required": "Password obbligatoria",
+    "save": "Salva",
+    "seo": { "description": "Jet.", "keywords": "jet", "title": "Aggiorna password" },
+    "toggle-visibility": "Mostra/nascondi",
+    "toolbar-title": "Aggiorna password",
+    "update-password": "Aggiorna password"
+  },
+  "paginator": {
+    "first-page": "Prima pagina",
+    "items-per-page": "Elementi per pagina:",
+    "last-page": "Ultima pagina",
+    "next-page": "Pagina successiva",
+    "page-1-of-1": "Pagina 1 di 1",
+    "page-x-of-y": "Pagina {{ x }} di {{ y }}",
+    "previous-page": "Pagina precedente"
+  }
+}

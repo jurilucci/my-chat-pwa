@@ -3,5 +3,7 @@ export enum SupabaseTable {
   AppPermissionsAppRoles = 'app_permissions_app_roles',
   AppRoles = 'app_roles',
   AppRolesUsers = 'app_roles_users',
+  Messages = 'messages',
   Profiles = 'profiles',
+  PushSubscriptions = 'push_subscriptions',
 }

@@ -21,12 +21,37 @@
   "constants": {
     "arabic": "العربية",
     "automatic": "تلقائي",
+    "chat": "الدردشة",
     "dark": "داكن",
     "english": "الإنجليزية",
     "home": "الرئيسية",
+    "italian": "الإيطالية",
     "light": "فاتح",
     "profile": "الملف الشخصي",
     "settings": "الإعدادات"
+  },
+  "jet-chat-page": {
+    "disable-push": "تعطيل الإشعارات",
+    "enable-push": "تفعيل الإشعارات",
+    "message": "رسالة",
+    "no-messages-yet": "لا توجد رسائل بعد. قل مرحباً!",
+    "notification-permission-x": "الإشعارات: {{ x }}",
+    "push-denied-hint": "الإشعارات محظورة. فعّلها من إعدادات المتصفح ثم أعد المحاولة.",
+    "push-disabled": "تم تعطيل إشعارات الدفع.",
+    "push-enabled": "تم تفعيل إشعارات الدفع.",
+    "push-not-subscribed": "الدفع متوقف",
+    "push-subscribed": "الدفع مفعّل",
+    "push-sw-disabled-hint": "عامل الخدمة معطّل في التطوير. استخدم build للإنتاج أو NG_APP_IS_SERVICE_WORKER_ENABLED=true.",
+    "realtime-connected": "متصل",
+    "realtime-disconnected": "غير متصل",
+    "send": "إرسال",
+    "seo": {
+      "description": "دردشة مع الوقت الفعلي ودفع الويب.",
+      "keywords": "chat push",
+      "title": "الدردشة"
+    },
+    "toolbar-title": "الدردشة",
+    "unknown-user": "مستخدم"
   },
   "jet-home-page": {
     "seo": {

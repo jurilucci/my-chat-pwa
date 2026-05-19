@@ -1,6 +1,6 @@
-import { corsHeaders } from '@supabase/supabase-js/cors';
-
+/** CORS headers for Edge Functions (no import from @supabase/supabase-js/cors — not available on JSR Deno). */
 export const CORS_HEADERS: Record<string, string> = {
-  ...corsHeaders,
-  'Access-Control-Allow-Origin': Deno.env.get('ACCESS_CONTROL_ALLOW_ORIGIN')!,
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Origin':
+    Deno.env.get('ACCESS_CONTROL_ALLOW_ORIGIN') ?? 'http://localhost:4200',
 };

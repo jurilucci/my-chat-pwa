@@ -6,6 +6,7 @@ const angular = require('angular-eslint');
 const perfectionist = require('eslint-plugin-perfectionist');
 
 module.exports = defineConfig([
+  { ignores: ['supabase/functions/**'] },
   {
     files: ['**/*.ts'],
     extends: [

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { DEFAULT_CHAT_ROOM_ID } from '@jet/constants/default-chat-room-id.constant';
 import { signedInGuard } from '@jet/guards/signed-in/signed-in.guard';
 import { signedOutGuard } from '@jet/guards/signed-out/signed-out.guard';
 import { unsavedChangesGuard } from '@jet/guards/unsaved-changes/unsaved-changes.guard';
@@ -13,6 +14,13 @@ const userRoutes: Routes = [
     loadComponent: async () =>
       (await import('@jet/components/message-page/message-page.component')).MessagePageComponent,
     path: 'email-verification-pending',
+  },
+  { path: 'chat', pathMatch: 'full', redirectTo: `chat/${DEFAULT_CHAT_ROOM_ID}` },
+  {
+    canActivate: [signedInGuard],
+    loadComponent: async () =>
+      (await import('@jet/components/chat-page/chat-page.component')).ChatPageComponent,
+    path: 'chat/:roomId',
   },
   {
     canActivate: [signedInGuard],

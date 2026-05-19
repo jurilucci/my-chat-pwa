@@ -21,12 +21,37 @@
   "constants": {
     "arabic": "العربية",
     "automatic": "Automatic",
+    "chat": "Chat",
     "dark": "Dark",
     "english": "English",
     "home": "Home",
+    "italian": "Italian",
     "light": "Light",
     "profile": "Profile",
     "settings": "Settings"
+  },
+  "jet-chat-page": {
+    "disable-push": "Disable notifications",
+    "enable-push": "Enable notifications",
+    "message": "Message",
+    "no-messages-yet": "No messages yet. Say hello!",
+    "notification-permission-x": "Notifications: {{ x }}",
+    "push-denied-hint": "Notifications are blocked. Enable them in your browser settings, then try again.",
+    "push-disabled": "Push notifications disabled.",
+    "push-enabled": "Push notifications enabled.",
+    "push-not-subscribed": "Push off",
+    "push-subscribed": "Push on",
+    "push-sw-disabled-hint": "Service worker is off in dev. Use a production build or set NG_APP_IS_SERVICE_WORKER_ENABLED=true.",
+    "realtime-connected": "Live",
+    "realtime-disconnected": "Offline",
+    "send": "Send",
+    "seo": {
+      "description": "Chat with realtime and web push.",
+      "keywords": "chat push",
+      "title": "Chat"
+    },
+    "toolbar-title": "Chat",
+    "unknown-user": "User"
   },
   "jet-home-page": {
     "seo": {
