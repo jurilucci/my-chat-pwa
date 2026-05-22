@@ -45,7 +45,6 @@ import { SettingsService } from '@jet/services/settings/settings.service';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import packageJson from 'package.json';
 import { filter } from 'rxjs';
-import { FooterComponent } from '../footer/footer.component';
 import { SidenavComponent } from '../sidenav/sidenav.component';
 import { ToolbarComponent } from '../toolbar/toolbar.component';
 
@@ -58,7 +57,6 @@ import { ToolbarComponent } from '../toolbar/toolbar.component';
     RouterLink,
     RouterOutlet,
     TranslocoModule,
-    FooterComponent,
     SidenavComponent,
     ToolbarComponent,
   ],

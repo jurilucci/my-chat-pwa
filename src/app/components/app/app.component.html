@@ -33,14 +33,6 @@
           <router-outlet />
         </main>
       </mat-tab-nav-panel>
-      <footer
-        [class]="{
-          'jet-add-bottom-margin': !_isLargeViewport,
-          'jet-add-safe-area': _shouldAddSafeArea,
-        }"
-      >
-        <jet-footer />
-      </footer>
       @if (!_isLargeViewport) {
         <nav
           backgroundColor="primary"
